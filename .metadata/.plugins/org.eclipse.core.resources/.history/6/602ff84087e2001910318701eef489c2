@@ -1,0 +1,13 @@
+package search;
+
+import java.util.ArrayList;
+
+public class SubwayWalkProblem extends Problem {
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,29 @@
+package search;
+
+import java.util.ArrayList;
+
+import subway.SubwayMap;
+
+public class SubwayProblem extends Problem {
+	SubwayMap map;
+
+	public SubwayProblem(State initial) {
+		super(initial);
+		
+	}
+
+	public SubwayProblem(State initial, State goal, SubwayMap map) {
+		super(initial, goal);
+		this.map = map;
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		ArrayList<Tuple> successors = new ArrayList<Tuple>();
+		map.degree(map.getStationByID(state.getID()));
+		successors.add(new Tuple(act, state));
+		
+		
+	}
+
+}

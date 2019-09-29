@@ -1,0 +1,14 @@
+package search;
+
+public class MainTest {
+
+	public MainTest() {
+		System.out.println("here");
+	}
+
+	public static void main(String[] args) {
+		bostonTest();
+
+	}
+
+}

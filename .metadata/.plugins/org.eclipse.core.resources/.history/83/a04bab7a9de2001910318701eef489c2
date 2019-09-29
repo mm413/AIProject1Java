@@ -1,0 +1,51 @@
+package search;
+
+import java.util.ArrayList;
+
+public class EightPuzzleProblem extends Problem {
+	State initial;
+	State goal = new State("123405678");
+	int moveNum = 0;
+
+	public EightPuzzleProblem(State initial) {
+		super(initial);
+		// TODO Auto-generated constructor stub
+	}
+
+	public EightPuzzleProblem(State initial, State goal) {
+		super(initial, goal);
+		this.initial = initial;
+		this.goal = goal;
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		char[] gameList = state.getName().toCharArray();
+		gameList = makeMoves(gameList);
+		moveNum++;
+		Action act = new Action("move number: "+ Integer.toString(moveNum));
+		State newState = new State(gameList.toString());
+		ArrayList<Tuple> successors = new ArrayList<Tuple>();
+		successors.add(new Tuple(act, newState));
+		return successors;
+	}
+	private char[] makeMoves(char[] gameList) {
+		for (int i =0; i < gameList.length; i++) {
+			//this is equilavent of going up, left, down, right. idk how, but i did it out on paper, and it is.
+			if (gameList[i] == '0') {
+				char temp = gameList[i-1];
+				gameList[i-1] = gameList[i-3];
+				char temp2 = gameList[i-4];
+				gameList[i-4] = temp;
+				gameList[i-3] = temp2;
+			}
+		}
+		return gameList;
+		
+	}
+	@Override
+	public boolean goalTest(State state){
+		return state.toString().equals(this.goal.toString());
+	}
+
+}

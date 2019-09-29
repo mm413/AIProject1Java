@@ -1,0 +1,15 @@
+package search;
+
+public class TravelAction extends Action {
+	private int cost; 
+	
+	public TravelAction(String n, int cost) {
+		super(n);
+		this.cost = cost;
+		
+	}
+	public int getCost() {
+		return this.cost;
+	}
+
+}

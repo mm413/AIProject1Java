@@ -1,0 +1,10 @@
+package search;
+
+public class StationState extends State {
+
+	public StationState(String n) {
+		super(n);
+		// TODO Auto-generated constructor stub
+	}
+
+}

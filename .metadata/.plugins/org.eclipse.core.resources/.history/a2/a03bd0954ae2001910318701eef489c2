@@ -1,0 +1,47 @@
+package search;
+
+import java.util.*;
+
+public class Search{
+	/* DO NOT MODIFY THE HEADERS OF ANY OF THESE FUNCTIONS */
+	
+	// Uninformed Search algorithms
+	
+	public static Node breadthFirstSearch(Problem problem){
+		
+		return null;
+	}
+	
+	public static Node depthFirstSearch(Problem problem){
+		ArrayList<Node> explored = new ArrayList<Node>();
+		Stack<Node> frontier = new Stack<Node>();
+		State current = problem.initial;
+		State goal = problem.goal;
+		Node start = new Node(current);
+		while (current != goal) {
+			System.out.println(problem.successor(current));
+			if (frontier.empty()) {
+				return null;
+			}
+			
+		}
+			
+		
+		return null;
+	}
+
+	// Informed (Heuristic) Search
+	
+	public static Node aStarSearch(Problem problem){
+		//YOUR CODE HERE
+		return null;
+	}
+	
+	// Main
+	public static void main(String[] args){
+		//Replace this code with code that runs the program specified by
+		//the command arguments
+		
+		System.out.println(args[0]);
+	}
+}

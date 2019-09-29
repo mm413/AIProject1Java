@@ -1,0 +1,124 @@
+STATION 1,S1_ID,STATION 2,S2_ID,LINE,MILES,KILOMETERS
+Ashmont,7,Shawmut,97,Red,0.62,1
+Shawmut,97,Fields Corner,49,Red,0.58,0.93
+Fields Corner,49,Savin Hill,95,Red,1,1.61
+Savin Hill,95,JFK/UMass,61,Red,0.71,1.14
+JFK/UMass,61,Andrew,4,Red,0.74,1.19
+Andrew,4,Broadway,24,Red,0.85,1.37
+Broadway,24,South Station,98,Red,0.82,1.32
+South Station,98,Downtown Crossing,43,Red,0.26,0.42
+Downtown Crossing,43,Park St,83,Red,0.23,0.37
+Park St,83,Charles/MGH,32,Red,0.56,0.9
+Charles/MGH,32,Kendall/MIT,62,Red,0.71,1.14
+Kendall/MIT,62,Central,30,Red,0.95,1.53
+Central,30,Harvard,54,Red,1.07,1.72
+Harvard,54,Porter,85,Red,0.99,1.59
+Porter,85,Davis,41,Red,0.66,1.06
+Davis,41,Alewife,2,Red,0.96,1.54
+Braintree,21,Quincy Adams,87,Red,1.86,2.99
+Quincy Adams,87,Quincy Center,88,Red,1.33,2.14
+Quincy Center,88,Wollaston,118,Red,1.28,2.06
+Wollaston,118,North Quincy,77,Red,0.8,1.29
+North Quincy,77,JFK/UMass,61,Red,3.53,5.68
+Mattapan,70,Capen St,28,Red,0.25,0.4
+Capen St,28,Valley Rd,112,Red,0.31,0.5
+Valley Rd,112,Central Ave,31,Red,0.43,0.69
+Central Ave,31,Milton,72,Red,0.32,0.51
+Milton,72,Butler,27,Red,0.29,0.47
+Butler,27,Cedar Grove,29,Red,0.57,0.92
+Cedar Grove,29,Ashmont,7,Red,0.38,0.61
+Boston College,15,South St,99,Green B,0.488,0.79
+South St,99,Chestnut Hill Ave,34,Green B,0.28,0.45
+Chestnut Hill Ave,34,Chiswick Rd,36,Green B,0.223,0.36
+Chiswick Rd,36,Sutherland Rd,108,Green B,0.224,0.36
+Sutherland Rd,108,Washington St,116,Green B,0.296,0.48
+Washington St,116,Warren St,114,Green B,0.311,0.5
+Warren St,114,Allston St,3,Green B,0.154,0.25
+Allston St,3,Griggs St,53,Green B,0.186,0.3
+Griggs St,53,Harvard Ave,55,Green B,0.253,0.41
+Harvard Ave,55,Packards Corner,82,Green B,0.3,0.48
+Packards Corner,82,Babcock St,9,Green B,0.191,0.31
+Babcock St,9,Pleasant St,84,Green B,0.132,0.21
+Pleasant St,84,St Paul St B,101,Green B,0.151,0.24
+St Paul St B,101,BU West,18,Green B,0.136,0.22
+BU West,18,BU Central,16,Green B,0.316,0.51
+BU Central,16,BU East,17,Green B,0.148,0.24
+BU East,17,Blandford St,14,Green B,0.199,0.32
+Blandford St,14,Kenmore,63,Green B,0.264,0.42
+Kenmore,63,Hynes Convention Center,59,Green,0.362,0.58
+Hynes Convention Center,59,Copley,40,Green,0.565,0.91
+Copley,40,Arlington,6,Green,0.363,0.58
+Arlington,6,Boylston,20,Green,0.325,0.52
+Boylston,20,Park St,83,Green,0.303,0.49
+Park St,83,Government Center,51,Green,0.249,0.4
+Cleveland Circle,37,Englewood Ave,45,Green C,0.209,0.34
+Englewood Ave,45,Dean Rd,42,Green C,0.17,0.27
+Dean Rd,42,Tappan St,110,Green C,0.208,0.33
+Tappan St,110,Washington Sq,115,Green C,0.176,0.28
+Washington Sq,115,Fairbanks St,46,Green C,0.213,0.34
+Fairbanks St,46,Brandon Hall,22,Green C,0.127,0.2
+Brandon Hall,22,Summit Ave,107,Green C,0.168,0.27
+Summit Ave,107,Coolidge Corner,39,Green C,0.241,0.39
+Coolidge Corner,39,St Paul St C,102,Green C,0.234,0.38
+St Paul St C,102,Kent St,64,Green C,0.154,0.25
+Kent St,64,Hawes St,56,Green C,0.157,0.25
+Hawes St,56,St Marys St,100,Green C,0.211,0.34
+St Marys St,100,Kenmore,63,Green C,0.713,1.15
+Riverside,91,Woodland,121,Green D,0.575,0.93
+Woodland,121,Waban,113,Green D,0.806,1.3
+Waban,113,Eliot,44,Green D,0.844,1.36
+Eliot,44,Newton Highlands,76,Green D,0.74,1.19
+Newton Highlands,76,Newton Centre,75,Green D,0.83,1.34
+Newton Centre,75,Chestnut Hill,33,Green D,1.483,2.39
+Chestnut Hill,33,Reservoir,89,Green D,0.987,1.59
+Reservoir,89,Beaconsfield,13,Green D,0.431,0.69
+Beaconsfield,13,Brookline Hills,25,Green D,0.799,1.29
+Brookline Hills,25,Brookline Village,26,Green D,0.543,0.87
+Brookline Village,26,Longwood,66,Green D,0.738,1.19
+Longwood,66,Fenway,47,Green D,0.39,0.63
+Fenway,47,Kenmore,63,Green D,0.531,0.85
+Heath St,58,Back of the Hill,11,Green E,0.074,0.12
+Back of the Hill,11,Riverway,92,Green E,0.153,0.25
+Riverway,92,Mission Park,73,Green E,0.174,0.28
+Mission Park,73,Fenwood Rd,48,Green E,0.205,0.33
+Fenwood Rd,48,Brigham Circle,23,Green E,0.146,0.23
+Brigham Circle,23,Longwood Medical Area,67,Green E,0.219,0.35
+Longwood Medical Area,67,Museum of Fine Arts,74,Green E,0.275,0.44
+Museum of Fine Arts,74,Northeastern,79,Green E,0.374,0.6
+Northeastern,79,Symphony,109,Green E,0.281,0.45
+Symphony,109,Prudential,86,Green E,0.232,0.37
+Prudential,86,Copley,40,Green E,0.422,0.68
+Government Center,51,Haymarket,57,Green,0.275,0.44
+Haymarket,57,North Station,78,Green,0.22,0.35
+North Station,78,Science Park/West End,96,Green E,0.543,0.87
+Science Park/West End,96,Lechmere,65,Green E,0.447,0.72
+Oak Grove,80,Malden Center,68,Orange,0.83,1.34
+Malden Center,68,Wellington,117,Orange,1.75,2.82
+Wellington,117,Assembly,8,Orange,0.6,0.97
+Assembly,8,Sullivan Sq,106,Orange,0.59,0.95
+Sullivan Sq,106,Community College,38,Orange,0.83,1.34
+Community College,38,North Station,78,Orange,0.81,1.3
+North Station,78,Haymarket,57,Orange,0.27,0.43
+Haymarket,57,State St,103,Orange,0.35,0.56
+State St,103,Downtown Crossing,43,Orange,0.18,0.29
+Downtown Crossing,43,Chinatown,35,Orange,0.25,0.4
+Chinatown,35,Tufts Medical Center,111,Orange,0.27,0.43
+Tufts Medical Center,111,Back Bay,10,Orange,0.55,0.88
+Back Bay,10,Massachusetts Ave,69,Orange,0.69,1.11
+Massachusetts Ave,69,Ruggles,94,Orange,0.41,0.66
+Ruggles,94,Roxbury Crossing,93,Orange,0.52,0.84
+Roxbury Crossing,93,Jackson Sq,60,Orange,0.55,0.88
+Jackson Sq,60,Stony Brook,104,Orange,0.51,0.82
+Stony Brook,104,Green St,52,Orange,0.51,0.82
+Green St,52,Forest Hills,50,Orange,0.69,1.11
+Wonderland,119,Revere Beach,90,Blue,0.4,0.64
+Revere Beach,90,Beachmont,12,Blue,0.73,1.17
+Beachmont,12,Suffolk Downs,105,Blue,0.57,0.92
+Suffolk Downs,105,Orient Heights,81,Blue,0.44,0.71
+Orient Heights,81,Wood Island,120,Blue,1.08,1.74
+Wood Island,120,Airport,1,Blue,0.63,1.01
+Airport,1,Maverick,71,Blue,0.57,0.92
+Maverick,71,Aquarium,5,Blue,0.9,1.45
+Aquarium,5,State St,103,Blue,0.28,0.45
+State St,103,Government Center,51,Blue,0.17,0.27
+Government Center,51,Bowdoin,19,Blue,0.17,0.27

@@ -1,0 +1,17 @@
+package search;
+
+import subway.Station;
+
+public class StationState extends State {
+	int id;
+
+	public StationState(String n, int ident) {
+		super(n);
+		id  = ident;
+		
+	}
+	public int getID() {
+		return this.id;
+	}
+
+}

@@ -1,0 +1,12 @@
+package search;
+
+import subway.Station;
+
+public class StationState extends State {
+
+	public StationState(String n) {
+		super(n);
+		private Station = Station.get ;
+	}
+
+}

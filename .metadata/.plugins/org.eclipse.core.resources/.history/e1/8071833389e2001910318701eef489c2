@@ -1,0 +1,29 @@
+package search;
+
+import java.util.ArrayList;
+
+import subway.SubwayMap;
+
+public class SubwayWalkProblem extends Problem {
+	SubwayMap map;
+	State goal;
+	double leewayDistance;
+	
+	public SubwayWalkProblem(State initial) {
+		super(initial);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public SubwayWalkProblem(State initial, State goal, SubwayMap map, double leewayDistance) {
+		super(initial, goal);
+		this.map = map;
+		this.goal = goal;
+		this.leewayDistance = leewayDistance;
+	}
+
+}

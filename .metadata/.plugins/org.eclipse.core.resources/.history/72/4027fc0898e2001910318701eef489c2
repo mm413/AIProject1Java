@@ -1,0 +1,29 @@
+package search;
+
+import java.util.ArrayList;
+
+public class EightPuzzleProblem extends Problem {
+	State initial;
+	State goal = new State("123405678");
+
+	public EightPuzzleProblem(State initial) {
+		super(initial);
+		// TODO Auto-generated constructor stub
+	}
+
+	public EightPuzzleProblem(State initial, State goal) {
+		super(initial, goal);
+		this.initial = initial;
+		this.goal = goal;
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		char[] gameList = state.getName().toCharArray();
+		for (char c: gameList) {
+			System.out.println(c);
+		}
+		return null;
+	}
+
+}

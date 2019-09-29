@@ -1,0 +1,26 @@
+package search;
+
+import java.util.ArrayList;
+
+public class SubwayProblem extends Problem {
+
+	public SubwayProblem(State initial) {
+		super(initial);
+		
+	}
+
+	public SubwayProblem(State initial, State goal) {
+		super(initial, goal);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		ArrayList<Tuple> successors = new ArrayList<Tuple>();
+
+		successors.add(new Tuple(act, state));
+		
+		
+	}
+
+}

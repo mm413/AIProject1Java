@@ -1,0 +1,139 @@
+package search;
+
+import java.io.FileNotFoundException;
+import java.util.*;
+
+import subway.SubwayMap;
+
+public class Search{
+	/* DO NOT MODIFY THE HEADERS OF ANY OF THESE FUNCTIONS */
+	
+	// Uninformed Search algorithms
+	
+	public static Node breadthFirstSearch(Problem problem){
+		int searchNodeCount = 0;
+		HashSet<Node> explored = new HashSet<Node>();
+		Queue<Node> frontier = new LinkedList<Node>();
+		State goalState = problem.goal;
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		//loop forever
+		while (true) {
+			//failure exit condition
+			if (frontier.size() == 0) {
+				return null;
+			}
+			
+			//set current node to first node in frontier, and remove it
+			currentNode = frontier.remove();
+			searchNodeCount ++;
+			explored.add(currentNode);
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				boolean inFrontier = false;
+				boolean inExplored = false;
+				for (Node n: frontier) {
+					if (n.getState().equals(child.getState())){
+						inFrontier = true;
+					}
+				}
+				for (Node n: explored) {
+					if (n.getState().equals(child.getState())) {
+						inExplored = true;
+					}
+				}
+				if (inFrontier == false && inExplored == false) {
+					frontier.add(child);
+					if (child.getState().equals(goalState)) {
+						System.out.println("Nodes Searched: " + searchNodeCount);
+						return child;
+					}
+				}
+			}
+		}
+	}
+	
+	public static Node depthFirstSearch(Problem problem){
+		int searchNodeCount = 0;
+		//initialize an empty explored set
+		HashSet<Node> explored = new HashSet<Node>();
+		//initialize an empty frontier stack
+		Stack<Node> frontier = new Stack<Node>();
+		State goalState = problem.goal;
+		//create root of tree
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		//loop forever
+		while (true) {
+			//failure exit condition
+			if (frontier.empty()) {
+				return null;
+			}
+			//set current node to last node in frontier, and remove it
+			currentNode = frontier.pop();
+			searchNodeCount ++;
+			
+			//success exit condition
+			if (currentNode.getState().equals(goalState)) {
+				System.out.println("Nodes Searched: " + searchNodeCount);
+				return currentNode;
+			}
+			//add current node to explored state
+			explored.add(currentNode);
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				boolean inFrontier = false;
+				boolean inExplored = false;
+				for (Node n: frontier) {
+					if (n.getState().equals(child.getState())){
+						inFrontier = true;
+					}
+				}
+				for (Node n: explored) {
+					if (n.getState().equals(child.getState())) {
+						inExplored = true;
+					}
+				}
+				if (inFrontier == false && inExplored == false) {
+					frontier.add(child);
+				}
+			}
+		}
+	}
+
+	// Informed (Heuristic) Search
+	
+	public static Node aStarSearch(Problem problem){
+		
+		return null;
+	}
+	
+	// Main
+	public static void main(String[] args) throws FileNotFoundException{
+		//create map
+		Scanner keyboard = new Scanner(System.in);
+//		System.out.println("enter that crazy stuff");
+//		String input = keyboard.nextLine();
+		SubwayMap bostonMap = subway.SubwayMap.buildBostonMap();
+		//create parameters for start/ end
+		int startid = bostonMap.getStationByName("Airport").id;
+		String startName = bostonMap.getStationByName("Airport").name;
+		int endid = bostonMap.getStationByName("South Station").id;
+		String endName = bostonMap.getStationByName("South Station").name;
+		//create start/end states
+		StationState startState = new StationState(startName, startid);
+		StationState endState = new StationState(endName, endid);
+		//create Problem
+		SubwayProblem Bostonprob = new SubwayProblem(startState, endState, bostonMap);
+		//Call Search
+		Node node = Search.breadthFirstSearch(Bostonprob);
+		for (Node n: node.path()){
+			System.out.println(n.toString());
+		}
+		System.out.println("Total Cost: " + node.getPathCost());
+//		StationState state = new StationState(bostonMap.getStationByID(1).toString(), 
+//		SubwayProblem problem = new SubwayProblem(bostonMap.)
+		
+		//System.out.println(args[0]);
+	}
+}

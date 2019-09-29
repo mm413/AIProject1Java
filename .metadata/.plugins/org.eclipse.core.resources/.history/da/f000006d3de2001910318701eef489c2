@@ -1,0 +1,40 @@
+package search;
+
+import java.util.*;
+
+import subway.*;
+
+public class SubwayProblem extends Problem {
+	SubwayMap map;
+
+	public SubwayProblem(State initial, SubwayMap map) {
+		super(initial);
+		this.map = map;
+		
+	}
+
+	public SubwayProblem(State initial, State goal, SubwayMap map) {
+		super(initial, goal);
+		this.map = map;
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		ArrayList<Tuple> successors = new ArrayList<Tuple>();
+//		ArrayList<Link> links= map.incidentLinks(map.getStationByName(state.getName()));
+		HashSet<Station> stations = map.adjacentStations(map.getStationByName(state.getName()));
+		for (Station s: stations) {
+			HashSet<Link> links = map.getLinksBetween(map.getStationByName(state.getName()), s);
+			System.out.println(links.size());
+			System.out.println("here");
+			for (Link l: links) {
+				System.out.println("here");
+				System.out.println(l.toString());
+			}
+//			successors.add(new Tuple(link, s));
+		}
+		return successors;
+		
+	}
+
+}

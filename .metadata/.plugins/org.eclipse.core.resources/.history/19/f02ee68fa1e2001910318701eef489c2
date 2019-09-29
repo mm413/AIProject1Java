@@ -1,0 +1,185 @@
+package search;
+
+import java.io.FileNotFoundException;
+import java.util.*;
+
+import subway.SubwayMap;
+
+public class Search{
+	/* DO NOT MODIFY THE HEADERS OF ANY OF THESE FUNCTIONS */
+	
+	// Uninformed Search algorithms
+	
+	public static Node breadthFirstSearch(Problem problem){
+		int searchNodeCount = 0;
+		HashSet<Node> explored = new HashSet<Node>();
+		Queue<Node> frontier = new LinkedList<Node>();
+		//State goalState = problem.goal;
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		//loop forever
+		while (true) {
+			//failure exit condition
+			if (frontier.size() == 0) {
+				return null;
+			}
+			
+			//set current node to first node in frontier, and remove it
+			currentNode = frontier.remove();
+			searchNodeCount ++;
+			explored.add(currentNode);
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				boolean inFrontier = false;
+				boolean inExplored = false;
+				for (Node n: frontier) {
+					if (n.getState().equals(child.getState())){
+						inFrontier = true;
+					}
+				}
+				for (Node n: explored) {
+					if (n.getState().equals(child.getState())) {
+						inExplored = true;
+					}
+				}
+				if (inFrontier == false && inExplored == false) {
+					frontier.add(child);
+					if (problem.goalTest(child.getState())) {
+						System.out.println("Nodes Searched: " + searchNodeCount);
+						return child;
+					}
+				}
+			}
+		}
+	}
+	
+	public static Node depthFirstSearch(Problem problem){
+		int searchNodeCount = 0;
+		//initialize an empty explored set
+		HashSet<Node> explored = new HashSet<Node>();
+		//initialize an empty frontier stack
+		Stack<Node> frontier = new Stack<Node>();
+		State goalState = problem.goal;
+		//create root of tree
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		//loop forever
+		while (true) {
+			//failure exit condition
+			if (frontier.empty()) {
+				return null;
+			}
+			//set current node to last node in frontier, and remove it
+			currentNode = frontier.pop();
+			searchNodeCount ++;
+			
+			//success exit condition
+			if (problem.goalTest(currentNode.getState())) {
+				System.out.println("Nodes Searched: " + searchNodeCount);
+				return currentNode;
+			}
+			//add current node to explored state
+			explored.add(currentNode);
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				boolean inFrontier = false;
+				boolean inExplored = false;
+				for (Node n: frontier) {
+					if (n.getState().equals(child.getState())){
+						inFrontier = true;
+					}
+				}
+				for (Node n: explored) {
+					if (n.getState().equals(child.getState())) {
+						inExplored = true;
+					}
+				}
+				if (inFrontier == false && inExplored == false) {
+					frontier.add(child);
+				}
+			}
+		}
+	}
+
+	// Informed (Heuristic) Search
+	
+	public static Node aStarSearch(Problem problem){
+		int searchNodeCount = 0;
+		//initialize an empty explored set
+		HashSet<Node> explored = new HashSet<Node>();
+		PriorityQueue<Node> frontier = new PriorityQueue<Node>(50, new NodeComparator(problem));
+		State goalState = problem.goal;
+		//create root of tree
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		while (true){
+			if (frontier.isEmpty()){
+				return null;
+			}
+			currentNode = frontier.poll();
+			if (problem.goalTest(currentNode.getState())){
+				System.out.println("Nodes Searched: " + searchNodeCount);
+				return currentNode;
+			}
+			explored.add(currentNode);
+			searchNodeCount++;
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				boolean inFrontier = false;
+				boolean inExplored = false;
+				for (Node n: frontier) {
+					if (n.getState().equals(child.getState())){
+						inFrontier = true;
+					}
+				}
+				for (Node n: explored) {
+					if (n.getState().equals(child.getState())) {
+						inExplored = true;
+					}
+				}
+				if (inFrontier == false && inExplored == false) {
+					frontier.add(child);
+				}
+			}
+				
+		}
+	}
+	
+	// Main
+	public static void main(String[] args) throws FileNotFoundException{
+		//create map
+		Scanner keyboard = new Scanner(System.in);
+//		System.out.println("enter that crazy stuff");
+//		String input = keyboard.nextLine();
+		SubwayMap bostonMap = subway.SubwayMap.buildBostonMap();
+		//create parameters for start/ end
+		int startid = bostonMap.getStationByName("Riverside").id;
+		String startName = bostonMap.getStationByName("Riverside").name;
+		int endid = bostonMap.getStationByName("Cleveland Circle").id;
+		String endName = bostonMap.getStationByName("Cleveland Circle").name;
+		//create start/end states
+		
+		//eightpuzzle stuff here
+		State puzzleStart = new State("142305678");
+		EightPuzzleProblem puzzle = new EightPuzzleProblem(puzzleStart);
+		Node node = Search.breadthFirstSearch(puzzle);
+		for (Node n: node.path()){
+			System.out.println(n.toString());
+		}
+		System.out.println("moves made: " + node.getPathCost());
+		//subway stuff below
+//		StationState startState = new StationState(startName, startid);
+//		StationState endState = new StationState(endName, endid);
+//		//create Problem
+//		SubwayProblem Bostonprob = new SubwayProblem(startState, endState, bostonMap);
+//		Node node = Search.breadthFirstSearch(Bostonprob);
+//		SubwayWalkProblem closeEnoughBoston = new SubwayWalkProblem(startState, endState, bostonMap, 0.25);
+//		Node node = Search.breadthFirstSearch(closeEnoughBoston);
+//		for (Node n: node.path()){
+//			System.out.println(n.toString());
+//		}
+//		System.out.println("Total Cost (in km): " + node.getPathCost());
+		
+		//System.out.println(args[0]);
+	}
+}

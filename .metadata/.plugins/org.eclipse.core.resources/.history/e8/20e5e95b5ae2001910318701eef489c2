@@ -1,0 +1,92 @@
+package search;
+
+import java.io.FileNotFoundException;
+import java.util.*;
+
+import subway.SubwayMap;
+
+public class Search{
+	/* DO NOT MODIFY THE HEADERS OF ANY OF THESE FUNCTIONS */
+	
+	// Uninformed Search algorithms
+	
+	public static Node breadthFirstSearch(Problem problem){
+		
+		return null;
+	}
+	
+	public static Node depthFirstSearch(Problem problem){
+		//initialize an empty explored set
+		HashSet<Node> explored = new HashSet<Node>();
+		//initialize an empty frontier stack
+		Stack<Node> frontier = new Stack<Node>();
+		State goalState = problem.goal;
+		//create root of tree
+		Node currentNode = new Node(problem.initial);
+		frontier.add(currentNode);
+		//loop forever
+		while (true) {
+			System.out.println(currentNode);
+			//failure exit condition
+			if (frontier.empty()) {
+				return null;
+			}
+			//set current node to first node in frontier
+			currentNode = frontier.pop();
+			
+			//success exit condition
+			if (currentNode.getState() == goalState) {
+				return currentNode;
+			}
+			//add current node to explored state
+			explored.add(currentNode);
+			ArrayList<Node> children = currentNode.expand(problem);
+			for (Node child: children) {
+				if (explored.contains(child) == false) {
+					frontier.add(child);
+				}
+			}
+//			for (Tuple tup: problem.successor(currentNode.getState())) {
+//					Node newNode = new Node(tup.getState(), currentNode, tup.getAction(), 1);
+//					boolean isThere = false;
+//					for (Node n: explored) {
+//						if (n.getState() == newNode.getState()){
+//							isThere = true;
+//						}
+//					}
+//					if (isThere == false){
+//						frontier.add(newNode);
+//					}
+//			}
+		}
+	}
+
+	// Informed (Heuristic) Search
+	
+	public static Node aStarSearch(Problem problem){
+		//YOUR CODE HERE
+		return null;
+	}
+	
+	// Main
+	public static void main(String[] args) throws FileNotFoundException{
+		//create map
+		SubwayMap bostonMap = subway.SubwayMap.buildBostonMap();
+		//create parameters for start/ end
+		int startid = bostonMap.getStationByName("Fenway").id;
+		String startName = bostonMap.getStationByName("Fenway").name;
+		int endid = bostonMap.getStationByName("South Station").id;
+		String endName = bostonMap.getStationByName("South Station").name;
+		//create start/end states
+		StationState startState = new StationState(startName, startid);
+		StationState endState = new StationState(endName, endid);
+		//create Problem
+		SubwayProblem Bostonprob = new SubwayProblem(startState, endState, bostonMap);
+		//Call Search
+		System.out.println(Search.depthFirstSearch(Bostonprob));
+//		StationState state = new StationState(bostonMap.getStationByID(1).toString(), 
+//		SubwayProblem problem = new SubwayProblem(bostonMap.)
+		
+		//System.out.println(args[0]);
+	}
+}

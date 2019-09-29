@@ -1,0 +1,16 @@
+package search;
+
+import java.io.FileNotFoundException;
+
+import subway.SubwayMap;
+
+public class MainTest {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		SubwayMap bostonMap = subway.SubwayMap.buildBostonMap();
+		System.out.println(bostonMap.getStationByID(1).id);
+//		StationState state = new StationState(bostonMap.getStationByID(1).toString(), 
+//		SubwayProblem problem = new SubwayProblem(bostonMap.)
+	}
+
+}

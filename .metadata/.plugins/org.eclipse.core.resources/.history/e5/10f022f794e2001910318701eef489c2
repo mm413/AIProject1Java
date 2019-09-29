@@ -1,0 +1,23 @@
+package search;
+
+import java.util.ArrayList;
+
+public class EightPuzzleProblem extends Problem {
+
+	public EightPuzzleProblem(State initial) {
+		super(initial);
+		// TODO Auto-generated constructor stub
+	}
+
+	public EightPuzzleProblem(State initial, State goal) {
+		super(initial, goal);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public ArrayList<Tuple> successor(State state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

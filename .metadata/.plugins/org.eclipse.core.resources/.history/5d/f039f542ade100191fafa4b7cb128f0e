@@ -1,0 +1,10 @@
+package search;
+
+public class TravelAction extends Action {
+
+	public TravelAction(String n) {
+		super(n);
+		// TODO Auto-generated constructor stub
+	}
+
+}

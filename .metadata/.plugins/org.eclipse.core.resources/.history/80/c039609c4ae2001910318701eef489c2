@@ -1,0 +1,63 @@
+package search;
+
+import java.util.*;
+
+import subway.SubwayMap;
+
+public class Search{
+	/* DO NOT MODIFY THE HEADERS OF ANY OF THESE FUNCTIONS */
+	
+	// Uninformed Search algorithms
+	
+	public static Node breadthFirstSearch(Problem problem){
+		
+		return null;
+	}
+	
+	public static Node depthFirstSearch(Problem problem){
+		ArrayList<Node> explored = new ArrayList<Node>();
+		Stack<Node> frontier = new Stack<Node>();
+		State current = problem.initial;
+		State goal = problem.goal;
+		Node start = new Node(current);
+		while (current != goal) {
+			System.out.println(problem.successor(current));
+			if (frontier.empty()) {
+				return null;
+			}
+			
+		}
+			
+		
+		return null;
+	}
+
+	// Informed (Heuristic) Search
+	
+	public static Node aStarSearch(Problem problem){
+		//YOUR CODE HERE
+		return null;
+	}
+	
+	// Main
+	public static void main(String[] args){
+		//create map
+		SubwayMap bostonMap = subway.SubwayMap.buildBostonMap();
+		//create parameters for start/ end
+		int startid = bostonMap.getStationByName("Fenway").id;
+		String startName = bostonMap.getStationByName("Fenway").name;
+		int endid = bostonMap.getStationByName("South Station").id;
+		String endName = bostonMap.getStationByName("South Station").name;
+		//create start/end states
+		StationState startState = new StationState(startName, startid);
+		StationState endState = new StationState(endName, endid);
+		//create Problem
+		SubwayProblem Bostonprob = new SubwayProblem(startState, bostonMap);
+		//Call Search
+		Search.depthFirstSearch(Bostonprob);
+//		StationState state = new StationState(bostonMap.getStationByID(1).toString(), 
+//		SubwayProblem problem = new SubwayProblem(bostonMap.)
+		
+		System.out.println(args[0]);
+	}
+}
